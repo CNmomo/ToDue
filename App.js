@@ -4,10 +4,23 @@ import {
   Text,
   View,
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Home from './components/Home';
+
+const RootStack = createStackNavigator();
 
 const App = () => {
   return (
-    <View><Text>Hello World!!!</Text></View>
+    <NavigationContainer>
+      <RootStack.Navigator>
+        <RootStack.Screen
+          name = 'Home'
+          component = {Home}
+        />
+      </RootStack.Navigator>
+    </NavigationContainer>
   );
 };
 
