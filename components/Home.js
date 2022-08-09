@@ -18,6 +18,7 @@ const Home = () => {
         component = {Pool}
         options = {{
           drawerIcon:()=>{return(<MaterialIcons  name="description" color={'#000000'} size={24} />)},
+          //TODO change icon
         }}
       />
       <Drawer.Screen
@@ -25,6 +26,7 @@ const Home = () => {
         component = {Today}
         options = {{
           drawerIcon:()=>{return(<MaterialIcons  name="home" color={'#000000'} size={24} />)},
+          //TODO change icon
         }}
       />
       <Drawer.Screen
@@ -32,6 +34,7 @@ const Home = () => {
         component = {Scheduled}
         options = {{
           drawerIcon:()=>{return(<MaterialIcons  name="today" color={'#000000'} size={24} />)},
+          //TODO change icon
         }}
       />
       <Drawer.Screen
@@ -43,6 +46,7 @@ const Home = () => {
             borderColor: '#E2E4E8',
           },
           drawerIcon:()=>{return(<MaterialIcons  name="settings" color={'#000000'} size={24} />)},
+          //TODO change icon
         }}
       />
     </Drawer.Navigator>
