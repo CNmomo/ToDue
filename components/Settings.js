@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const Settings = () => {
   return (
     <View>
-      
+      <Text>Settings</Text>
     </View>
   );
 }
