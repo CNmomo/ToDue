@@ -14,7 +14,11 @@ const RootStack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
         <RootStack.Screen
           name = 'Home'
           component = {Home}
