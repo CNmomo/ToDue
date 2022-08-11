@@ -11,6 +11,7 @@ import Settings from './Settings';
 const Drawer = createDrawerNavigator();
 
 const Home = () => {
+
   return (
     <Drawer.Navigator>
       <Drawer.Screen
