@@ -1,7 +1,7 @@
 # ToDue
 
 <h>Component Structure</h>
-
+<pre>
 App
 ├─store
 │  └─screenSetterSlice
@@ -14,3 +14,4 @@ App
       │    ├─CreateTask
       │    └─EditTask
       └─Settings
+</pre>
