@@ -3,9 +3,10 @@
 <h>Component Structure</h>
 <pre>
 App
-├─store
+├─store                       redux
 │  └─screenSetterSlice
-└─Root
+│                          -----------------------
+└─Root                        components
    └─Home
       │ ┌─Pool
       ├─┼─Today
