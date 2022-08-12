@@ -7,6 +7,7 @@ App
 │  └─screenSetterSlice        redux
 │  -----------------------------------------
 └─Root                        components
+   ├─Splash
    └─Home
       │ ┌─Pool
       ├─┼─Today
