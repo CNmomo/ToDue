@@ -1,25 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet } from 'react-native';
 import store from './src/redux/store'
 import { Provider } from 'react-redux'
 
-import Home from './src/components/Home';
-
-const RootStack = createStackNavigator();
+import Root from './src/components/Root';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <RootStack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <RootStack.Screen name="Home" component={Home} />
-        </RootStack.Navigator>
-      </NavigationContainer>
+      <Root />
     </Provider>
   );
 };

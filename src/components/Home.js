@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React from 'react';
+import {  StyleSheet } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { useSelector, useDispatch } from 'react-redux';
-import { setPool, setToday, setScheduled } from '../redux/screenSetterSlice'
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { useSelector } from 'react-redux';
 
 import Pool from './Pool';
 import Today from './Today';
@@ -14,39 +12,12 @@ import Settings from './Settings';
 
 const Drawer = createDrawerNavigator();
 
-const Home = () => {
-  const dispatch = useDispatch();
-
-  const getDefaultScreen = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem('defaultScreen');
-      if (jsonValue != null){
-        const value =  JSON.parse(jsonValue)
-        if(value === 'Pool'){
-          dispatch(setPool());
-        }
-        else if(value === 'Today'){
-          dispatch(setToday());
-        }
-        else if(value === 'Scheduled'){
-          dispatch(setScheduled());
-        }
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
+const Home = (screen) => {
   const defaultScreen = useSelector(state => state.screenSetter.value);
-  console.log({defaultScreen});
-
-  useEffect(() => {
-    getDefaultScreen();
-  }, []);
 
   return (
-    <Drawer.Navigator
-      initialRouteName = {defaultScreen}
+    <Drawer.Navigator 
+      initialRouteName={defaultScreen} //TODO resolve
     >
       <Drawer.Screen
         name="Pool"
