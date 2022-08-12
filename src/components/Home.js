@@ -12,7 +12,7 @@ import Settings from './Settings';
 
 const Drawer = createDrawerNavigator();
 
-const Home = (screen) => {
+const Home = () => {
   const defaultScreen = useSelector(state => state.screenSetter.value);
 
   return (
