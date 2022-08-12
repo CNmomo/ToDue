@@ -6,12 +6,18 @@ const Scheduled = () => {
   const defaultScreen = useSelector(state => state.screenSetter.value) //TODO delete after testing redux
 
   return (
-    <View>
-      <Text>{defaultScreen}</Text>
+    <View style={styles.body}>
+      <Text>defaultScreen: {defaultScreen}</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  body:{
+    flex:1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
+})
 
 export default Scheduled;

@@ -1,19 +1,18 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setPool, setToday, setScheduled } from '../redux/screenSetterSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
+import Splash from './Splash';
 import Home from './Home';
 
 const Stack = createStackNavigator();
 
 const Root = () => {
-  const defaultScreen = useSelector(state => state.screenSetter.value);
   const dispatch = useDispatch();
 
   const getDefaultScreen = async () => {
@@ -30,6 +29,7 @@ const Root = () => {
         else if(value === 'Scheduled'){
           dispatch(setScheduled());
         }
+        console.log("get")
       }
     } catch (e) {
       console.log(e);
@@ -42,13 +42,16 @@ const Root = () => {
 
   return (
     <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}>
-          <Stack.Screen name="Home" component={Home} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Splash"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

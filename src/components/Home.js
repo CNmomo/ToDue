@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <Drawer.Navigator 
-      initialRouteName={defaultScreen} //TODO resolve
+      initialRouteName={defaultScreen}
     >
       <Drawer.Screen
         name="Pool"

@@ -22,7 +22,7 @@ const Settings = () => {
 
   return (
     <View>
-      <Text>{defaultScreen}</Text>
+      <Text>defaultScreen: {defaultScreen}</Text>
       <Button
         title="Pool"
         onPress={() => {
