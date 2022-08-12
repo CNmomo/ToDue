@@ -3,8 +3,8 @@
 <h>Component Structure</h>
 <pre>
 App
-├─store                       redux
-│  └─screenSetterSlice
+├─store
+│  └─screenSetterSlice        redux
 │  -----------------------------------------
 └─Root                        components
    └─Home
