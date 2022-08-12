@@ -2,7 +2,7 @@
 
 Component Structure
 
-App
+App\n
 ├─store
 │  └─screenSetterSlice
 └─Root
