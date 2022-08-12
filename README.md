@@ -5,7 +5,7 @@
 App
 ├─store                       redux
 │  └─screenSetterSlice
-│                          -----------------------
+│  -----------------------------------------
 └─Root                        components
    └─Home
       │ ┌─Pool
