@@ -10,11 +10,11 @@ App
 └─Root                        components
    ├─Splash
    └─Home
-      │ ┌─Pool
-      ├─┼─Today
-      │ └─Schedule
-      │    ├─AppendTask
-      │    ├─CreateTask
-      │    └─EditTask
+      │ ┌─Pool─────┐
+      ├─┼─Today────┼─┐
+      │ └─Schedule─┘ │
+      │              ├─AppendTask
+      │              ├─CreateTask
+      │              └─EditTask
       └─Settings
 </pre>
