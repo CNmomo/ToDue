@@ -5,9 +5,10 @@ import { useSelector } from 'react-redux'; //TODO delete after testing redux
 const Today = () => {
   const defaultScreen = useSelector(state => state.screenSetter.value) //TODO delete after testing redux
 
+  let timeID = useSelector(state => state.timer.value)
   return (
     <View style={styles.body}>
-      <Text>defaultScreen: {defaultScreen}</Text>
+      <Text>{timeID}</Text>
     </View>
   );
 }

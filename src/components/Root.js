@@ -3,8 +3,9 @@ import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setPool, setToday, setScheduled } from '../redux/screenSetterSlice';
+import { setTime } from '../redux/timerSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Splash from './Splash';
@@ -14,7 +15,6 @@ const Stack = createStackNavigator();
 
 const Root = () => {
   const dispatch = useDispatch();
-  //const defaultScreen = useSelector(state => state.screenSetter.value);
 
   const getDefaultScreen = async () => {
     try {
@@ -37,8 +37,14 @@ const Root = () => {
     }
   };
 
+  const initializeTime = () => {
+    let time = Date().toString();
+    dispatch(setTime(time));
+  }
+
   useEffect(() => {
     getDefaultScreen();
+    initializeTime();
   }, []);
 
   return (
