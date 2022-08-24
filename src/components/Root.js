@@ -19,15 +19,13 @@ const Root = () => {
   const getDefaultScreen = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('defaultScreen');
-      if (jsonValue != null){
-        const value =  JSON.parse(jsonValue)
-        if(value === 'Pool'){
+      if (jsonValue != null) {
+        const value = JSON.parse(jsonValue);
+        if (value === "Pool") {
           dispatch(setPool());
-        }
-        else if(value === 'Today'){
+        } else if (value === 'Today') {
           dispatch(setToday());
-        }
-        else if(value === 'Scheduled'){
+        } else if (value === 'Scheduled') {
           dispatch(setScheduled());
         }
         console.log("get");
@@ -38,9 +36,12 @@ const Root = () => {
   };
 
   const initializeTime = () => {
-    let time = Date().toString();
-    dispatch(setTime(time));
-  }
+    //console.log(new Date(2022, 0, 1))
+    let currentTime = Date();
+    let timeID = currentTime.split(" ");
+    timeID = timeID.slice(0, 5);
+    dispatch(setTime(timeID));
+  };
 
   useEffect(() => {
     getDefaultScreen();
@@ -60,9 +61,8 @@ const Root = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
 
 export default Root;
-

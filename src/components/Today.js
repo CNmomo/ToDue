@@ -1,14 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import { useSelector } from 'react-redux'; //TODO delete after testing redux
+
+import Date from './Date';
 
 const Today = () => {
-  const defaultScreen = useSelector(state => state.screenSetter.value) //TODO delete after testing redux
 
-  let timeID = useSelector(state => state.timer.value)
   return (
     <View style={styles.body}>
-      <Text>{timeID}</Text>
+      <Date style={styles.date}/>
     </View>
   );
 }
@@ -17,8 +16,11 @@ const styles = StyleSheet.create({
   body:{
     flex:1,
     alignItems: 'center',
-    justifyContent: 'center',
-  }
+    justifyContent: 'flex-start',
+  },
+  date:{
+    flex:1,
+  },
 })
 
 export default Today;
